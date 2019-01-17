@@ -5,6 +5,7 @@ gem "rails", "5.2"
 gem "annotate"
 gem "bootstrap-sass"
 gem "devise"
+gem "devise_token_authenticatable"
 gem "draper"
 gem "haml-rails"
 gem "jquery-rails"
@@ -12,6 +13,7 @@ gem "puma"
 gem "sass-rails"
 gem "sqlite3"
 gem "uglifier"
+gem "jbuilder"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false

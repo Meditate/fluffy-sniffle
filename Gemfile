@@ -4,6 +4,7 @@ gem "rails", "5.2"
 
 gem "annotate"
 gem "bootstrap-sass"
+gem "delayed_job_active_record"
 gem "devise"
 gem "devise_token_authenticatable"
 gem "draper"

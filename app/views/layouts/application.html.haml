@@ -15,7 +15,8 @@
     %main
       .container
         #main-region
-        = render 'layouts/messages'
+          #flash
+            = render 'layouts/messages'
         = yield
     %footer.text-center
       Magic by

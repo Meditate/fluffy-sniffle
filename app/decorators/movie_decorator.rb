@@ -11,4 +11,6 @@ class MovieDecorator < Draper::Decorator
         "?a=" + SecureRandom.uuid
     end
   end
+
+  delegate :name, to: :genre, prefix: true
 end

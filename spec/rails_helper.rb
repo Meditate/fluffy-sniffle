@@ -7,7 +7,11 @@ require "pry"
 require "capybara/rails"
 require "simplecov"
 require "shoulda/matchers"
+require "webmock/rspec"
+
 SimpleCov.start "rails"
+WebMock.disable_net_connect!(allow_localhost: true)
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

@@ -8,12 +8,14 @@ gem "devise"
 gem "draper"
 gem "haml-rails"
 gem "jquery-rails"
+gem "puma"
 gem "sass-rails"
 gem "sqlite3"
 gem "uglifier"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
+gem "faraday"
 
 group :development do
   gem "better_errors"
@@ -31,6 +33,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
   gem "listen"
+  gem "pry-byebug"
   gem "rspec-rails"
   gem "rubocop"
   gem "simplecov"
@@ -38,4 +41,5 @@ end
 
 group :test do
   gem "shoulda-matchers"
+  gem "webmock"
 end

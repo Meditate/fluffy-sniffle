@@ -7,6 +7,9 @@ AllCops:
   - "vendor/**/*"
   - "db/**/*"
   - "config/environments/**/*"
+  - "config/initializers/**/*"
+  - "bin/**"
+  - "config.ru"
   DisplayCopNames: false
   StyleGuideCopsOnly: false
 Rails:

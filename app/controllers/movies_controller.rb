@@ -28,8 +28,13 @@ class MoviesController < ApplicationController
   end
 
   def export
-    file_path = "tmp/movies.csv"
-    MovieExporter.new.call(current_user, file_path)
-    redirect_to root_path, notice: "Movies exported"
+    respond_to do |format|
+      format.js do
+        file_path = "tmp/movies.csv"
+        MovieExporter.new.delay.call(current_user, file_path)
+        flash.now[:notice] = "Email sent with movie info"
+        render layout: false
+      end
+    end
   end
 end

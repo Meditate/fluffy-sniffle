@@ -14,6 +14,7 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
+  validates_with TitleBracketsValidator
 
   attr_accessor :plot, :rating, :poster
 end

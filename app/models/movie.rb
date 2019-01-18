@@ -14,6 +14,7 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
+  has_many :comments, as: :commentable, dependent: :destroy
   validates_with TitleBracketsValidator
 
   attr_accessor :plot, :rating, :poster

@@ -1,0 +1,16 @@
+%table.table.table-striped
+  %tbody
+    - comments.each_with_index do |comment, i|
+      %tr
+        %td= i + 1
+        %td
+          -if current_user && current_user == comment.user
+            = link_to "remove", comment_path(id: comment, commentable_type: comment.commentable_type, commentable_id: comment.commentable_id), method: :delete
+        %td
+          = comment.body
+        %td
+          %h4
+            = comment.user.email
+          %p
+            %strong
+

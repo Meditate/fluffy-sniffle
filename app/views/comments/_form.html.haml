@@ -1,0 +1,6 @@
+=form_for :comment, url: { controller: "comments", action: "create" } do |f|
+  .form-group
+    = f.text_area :body, class: "form-control", placeholder: "Write something..."
+    = f.hidden_field :commentable_type, value: commentable.class
+    = f.hidden_field :commentable_id, value: commentable.id
+  = f.submit "Submit", class: "btn btn-primary"

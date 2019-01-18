@@ -1,5 +1,7 @@
 %h1= @movie.title
 .jumbotron
   = @movie.description
+= render('comments/comments_table', comments: @movie.comments.order(:created_at))
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default', remote: true
+  = render('comments/form', commentable: @movie)

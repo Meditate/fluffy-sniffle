@@ -2,7 +2,14 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, only: [:send_info]
 
   def index
-    @movies = Movie.all.decorate
+    facade = IndexFacade.new
+
+    respond_to do |format|
+      format.js do
+        @movies = facade.movies
+      end
+      format.html
+    end
   end
 
   def show

@@ -1,0 +1,7 @@
+%table.table.table-striped
+  %tbody
+    - commenters.each_with_index do |commenter, i|
+      %tr
+        %td= i + 1
+        %td= commenter.email
+        %td= commenter.comments_count

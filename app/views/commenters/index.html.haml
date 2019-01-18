@@ -1,0 +1,5 @@
+.row
+  .col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
+    %h1.text-center Top Comments
+    #commenters_body.text-center
+      = render ('commenters/commenters_table'), commenters: @commenters

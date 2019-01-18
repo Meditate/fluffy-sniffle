@@ -21,9 +21,7 @@ class MoviesController::IndexFacade
 
   def fetch_movies
     movies_scope.map do |movie|
-      res =
-        JSON
-          .parse(connection.get(url_for_movie(movie)).body, symbolize_names: true)
+      res = JSON.parse(connection.get(url_for_movie(movie)).body, symbolize_names: true)
       movie.attributes = {
         plot: res.dig(:data, :attributes, :plot),
         rating: res.dig(:data, :attributes, :rating),
